@@ -52,7 +52,6 @@
         </div>
     </header>
     <main>
-        <?php include "PHP/session_start.php" ?>
         <section id="section_form_contact">
             <div class="container">
                 <div class="logo">
@@ -60,24 +59,6 @@
                         <h1 class="title title_1">Contact</h1>
                     </div>
                 </div>
-                <?php
-                //afficher le message d'erreur
-                if (isset($info)) { ?>
-                    <p class="request_message" style="color:red">
-                        <?= $info ?>
-                    </p>
-                <?php
-                }
-                ?>
-                <?php
-                ////afficher le message de succes
-                if (isset($_SESSION['succes_message'])) { ?>
-                    <p class="request_message" style="color:#2FE94A">
-                        <?= $_SESSION['succes_message'] ?>
-                    </p>
-                <?php
-                }
-                ?>
                 <!-- <form action="https://api.web3forms.com/submit" method="POST" class="form_contact" id="contact"> -->
                 <form action="" method="POST" class="form_contact" id="contact">
                     <div class="form_group">
