@@ -1,0 +1,793 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lobster", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+    background-color: #9D2A2A;
+    color: #FFF;
+}
+
+h1 {
+    font-size: 3.5em;
+}
+
+h2 {
+    font-size: 2.7em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 1.25em;
+}
+
+.color-acento {
+    color: #E9E51C;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 1rem;
+}
+
+button a {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255);
+    box-shadow: 2px 2px 10px rgba(192, 129, 38);
+    background-color: #C08126;
+    color: #FFF;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #a76f21;
+    scale: 1.05;
+}
+
+button:active {
+    scale: 0.95;
+}
+
+/* HEADER */
+header {
+    position: sticky;
+    padding: 0 2rem;
+    background-color: #1F2833;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #E9E51C;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar ul li a.active {
+    color: #1F2833;
+    background-color: #E9E51C;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 20px;
+}
+
+.navbar .toggle_btn {
+    color: #FFF;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn {
+    background-color: #E9E51C;
+    color: rgb(31, 40, 51);
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.action_btn:hover {
+    scale: 1.05;
+    color: rgb(31, 40, 51);
+}
+
+.action_btn:active {
+    scale: 0.95;
+}
+
+/* DROPDOWN MENU */
+.dropdown_menu {
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background-color: rgba(31, 40, 51, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+    height: 340px;
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .action_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* HERO */
+
+section#hero {
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url("IMAGES/1_Images seules/1_MADRID.jpg");
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #FFF;
+}
+
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.5rem;
+}
+
+/* À PROPOS */
+#A_propos .container {
+    text-align: center;
+    padding: 150px 12px;
+}
+
+/* LES + VISITÉS*/
+#les_plus_visites {
+    background-color: #1F2833;
+    color: #FFF;
+    text-align: center;
+}
+
+#les_plus_visites .container {
+    padding: 25px 12px;
+}
+
+#les_plus_visites h2 {
+    margin-top: 0;
+    font-size: 3.2em;
+}
+
+#les_plus_visites p {
+    display: none;
+}
+
+#les_plus_visites .carta {
+    background-position: center center;
+    background-size: cover;
+    padding: 10px;
+    margin: 20px;
+    background-repeat: no-repeat;
+    background-position-y: 0;
+    background-color: rgb(63, 81, 103, 0.5);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+}
+
+.carta:first-child {
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url("IMAGES/2_Sagrada_Familia/2.1_Sagrada_Familia.jpg");
+}
+
+.carta:nth-child(2) {
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url("IMAGES/3_Valencia/3.1_Valencia.jpg");
+}
+
+.carta:nth-child(3) {
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url("IMAGES/4_Valladolid/4.1 _Valladolid.jpg");
+}
+
+/* SOUTENIR LE SITE */
+#soutenir_le_site .container {
+    text-align: center;
+    padding: 210px 12px;
+}
+
+#soutenir_le_site h2 {
+    margin-top: 0px;
+}
+
+#soutenir_le_site li {
+    margin: 16px 0px;
+    font-weight: bold;
+    font-size: 25px;
+    padding-bottom: 1rem;
+}
+
+#soutenir_le_site button {
+    background-color: #E9E51C;
+    color: rgb(31, 40, 51);
+    margin: 0px 100px;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#soutenir_le_site button:hover {
+    scale: 1.05;
+    color: rgb(31, 40, 51);
+}
+
+#soutenir_le_site button:active {
+    scale: 0.95;
+}
+
+/* DESCUBRIR LA LICENCIA */
+
+#descubrir_la_licencia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url("IMAGES/1_Images seules/4 _Segovia.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #FFF;
+    height: 80vh;
+}
+
+#descubrir_la_licencia h2 {
+    font-size: 5em;
+}
+
+#descubrir_la_licencia button {
+    font-size: 2em;
+}
+
+/* FOOTER */
+footer {
+    background-color: rgb(31, 40, 51);
+    padding: 70px 0;
+    line-height: 1.5;
+}
+
+footer .container {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer .footer-col {
+    width: 25%;
+    padding: 0 40px;
+}
+
+footer .footer-col h4 {
+    font-size: 1.4em;
+    color: #E9E51C;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+    margin-top: 15px;
+    font-weight: 500;
+    position: relative;
+    text-align: center;
+}
+
+footer .footer-col h4:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    bottom: -10px;
+    height: 4px;
+    display: block;
+    margin: 0 auto;
+    /*box-sizing: border-box;*/
+    background-color: #9D2A2A;
+    /*width: 50%;*/
+}
+
+footer .footer-col ul li:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+footer .footer-col ul li a {
+    font-size: 15px;
+    text-transform: capitalize;
+    color: #C08126;
+    text-decoration: none;
+    font-weight: 300;
+    color: #FFF;
+    display: block;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+footer .footer-col ul li a:hover {
+    color: #C08126;
+    padding-left: 10px;
+}
+
+footer .footer-col .social_links {
+    text-align: center;
+}
+
+footer .footer-col .social_links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(164, 205, 255, 0.2);
+    margin: 0px 15px 15px 0px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #FFF;
+    transition: all 0.3s ease;
+}
+
+footer .footer-col .social_links a:hover {
+    color: #C08126;
+    background-color: #FFF;
+}
+
+footer hr {
+    margin-top: 30px;
+    margin-left: 1% !important;
+    margin-right: 1% !important;
+}
+
+footer p {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 15px;
+    text-align: center;
+}
+
+/* FORMULAIRE DE CONTACT */
+
+#section_form_contact {
+    align-items: center;
+    justify-content: center;
+}
+
+#section_form_contact .request_message {
+    width: 400px;
+    text-transform: capitalize;
+    background-color: #1F2833;
+    text-align: center;
+    /*color: #2FE94A;*/
+    font-size: 13px;
+    padding: 14px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 15px rgba(31, 40, 51, 0.1);
+    animation: anime 0.5s ease-out;
+}
+
+/* ANIMATION */
+@keyframes anime {
+    from {
+        transform: translateY(-70px);
+    }
+}
+
+#section_form_contact .titre {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#section_form_contact .title {
+    font-family: "Lobster", cursive;
+    padding: 0px 15px;
+    text-shadow: 0 0 5px rgb(0, 0, 0);
+    display: inline-block;
+    margin: 0 auto;
+}
+
+#section_form_contact .title_1 {
+    background-image: linear-gradient(to bottom, transparent 0%, transparent 68%, #C08126 68%, #C08126 95%, transparent 95%);
+    font-size: 50px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+}
+
+/* CONTAINER */
+#section_form_contact {
+    width: 95%;
+    margin: 15px 0px 15px 30px;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url("IMAGES/1_Images seules/7_Catedral_de_León-Santa.jpg");
+    background-size: cover;
+    background-position: center center;
+    border-radius: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    padding: 30px 50px;
+    box-sizing: border-box;
+}
+
+/* FORM */
+#section_form_contact .form_group {
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#section_form_contact .form_label {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    font-size: inherit;
+    transform: translateY(-50%);
+    opacity: 1;
+    transition: all .3s;
+}
+
+/* FORM INPUT */
+#section_form_contact .form_input {
+    font-size: 16px;
+    font-family: inherit;
+    padding: 3px 10px;
+    border-radius: 8px;
+    border: none;
+    border-bottom: 4px solid transparent;
+    width: 100%;
+    transition: all .3s;
+}
+
+#section_form_contact .form_input::-webkit-input-placeholder {
+    color: #000;
+    transform: translateY(4px);
+}
+
+#section_form_contact .form_input::focus::-webkit-input-placeholder {
+    visibility: hidden;
+    opacity: 0;
+}
+
+/*#section_form_contact .form_input:focus {
+    outline: none;
+    border-bottom: 4px solid #2FE94A;
+    width: 65%;
+}
+
+#section_form_contact .form_input:focus:invalid {
+    border-bottom: 4px solid #E94A2F;
+}
+
+#section_form_contact .form_input:focus+.form_label {
+    opacity: 1;
+    font-size: 20px;
+}*/
+
+/* FORM MESSAGE*/
+#section_form_contact .form_message,
+#section_form_contact .form_message .message_input {
+    width: 100%;
+}
+
+/* submitBtn */
+#section_form_contact .submitBtn {
+    display: block;
+    padding: 5px 30px;
+    border: none;
+    outline: none;
+    background-color: #E9E51C;
+    color: #1F2833;
+    font-family: inherit;
+    font-size: 25px;
+    border-radius: 30px;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+#section_form_contact .submitBtn:hover {
+    transform: scale(1.02) translateY(-2px);
+}
+
+#section_form_contact .submitBtn:active {
+    transform: scale(0.98) translateY(1px);
+}
+
+/* RESPONSIVE */
+@media (min-width: 1280px) {
+
+    /* À PROPOS */
+    #A_propos .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #A_propos .texto {
+        width: 50%;
+        max-width: 600px;
+        text-align: initial;
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #A_propos .img-container {
+        background-image: url("IMAGES/1_Images seules/5_Granada.jpg");
+        background-size: cover;
+        background-position: center;
+        margin-left: 100px;
+        height: 500px;
+        width: 600px;
+        border-radius: 15px;
+    }
+
+    /* SOUTENIR LE SITE*/
+
+    #soutenir_le_site {
+        background-image: url("IMAGES/1_Images seules/6_Nous_Soutenir.png");
+        background-repeat: no-repeat;
+        background-size: 500px 400px;
+        background-position: calc(95vw - 500px);
+    }
+
+    #soutenir_le_site .container {
+        text-align: inherit;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #soutenir_le_site ul {
+        margin-left: 200px;
+    }
+
+    #soutenir_le_site h2 {
+        margin-left: 15px;
+    }
+
+    #soutenir_le_site button {
+        margin-left: 100px;
+    }
+}
+
+@media (max-width: 1225px) {
+
+    /* NAVBAR */
+    .navbar .links,
+    .navbar .action_btn {
+        display: none;
+    }
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+
+    /* DROPDOWN MENU */
+
+    .dropdown_menu {
+        display: block;
+    }
+
+    /* SECTION HERO */
+    #hero h1 {
+        margin-top: 15rem;
+    }
+}
+
+@media (min-width: 984px) {
+    /* LES + VISITÉS*/
+
+    #les_plus_visites .les_plus_visites {
+        display: flex;
+        justify-content: center;
+    }
+
+    #les_plus_visites p {
+        display: block;
+        margin-top: 125px;
+        margin-bottom: 30px;
+    }
+
+    les_plus_visites h2 {
+        margin-top: 0;
+    }
+
+    #les_plus_visites h3 {
+        margin-top: 0;
+    }
+
+    #les_plus_visites .carta {
+        padding: 50px;
+        background-size: 100% 150px;
+        background-repeat: no-repeat;
+        background-position-y: 0;
+        background-color: rgb(63, 81, 103, 0.5);
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .carta:first-child {
+        background-image: linear-gradient(0deg,
+                rgba(0, 0, 0, 0.5),
+                rgba(0, 0, 0, 0.5)), url("IMAGES/2_Sagrada_Familia/2.1_Sagrada_Familia.jpg");
+    }
+
+    .carta:nth-child(2) {
+        background-image: linear-gradient(0deg,
+                rgba(0, 0, 0, 0.5),
+                rgba(0, 0, 0, 0.5)), url("IMAGES/3_Valencia/3.1_Valencia.jpg");
+    }
+
+    .carta:nth-child(3) {
+        background-image: linear-gradient(0deg,
+                rgba(0, 0, 0, 0.5),
+                rgba(0, 0, 0, 0.5)), url("IMAGES/4_Valladolid/4.1 _Valladolid.jpg");
+    }
+}
+
+@media (max-width: 882px) {
+    footer .footer-col {
+        width: 50%;
+    }
+
+    footer .container {
+        height: 350px;
+    }
+}
+
+@media (max-width: 716px) {
+    footer p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 579px) {
+    footer p {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 576px) {
+
+    /* DROPDOWN MENU */
+    .dropdown_menu {
+        left: 2rem;
+        width: unset;
+    }
+
+    /* SECTION HERO */
+    #hero h1 {
+        margin-top: 16rem;
+        align-items: center;
+    }
+}
+
+@media (max-width: 534px) {
+    footer p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 455px) {
+    .navbar .logo a {
+        font-size: 1.2rem;
+    }
+
+    footer .container {
+        height: 315px;
+    }
+}
+
+@media (max-width: 440px) {
+    .navbar .logo a {
+        font-size: 1rem;
+    }
+
+    #A_propos .container {
+        padding: 20px;
+    }
+
+    #A_propos h2,
+    #soutenir_le_site h2 {
+        font-size: 1rem;
+    }
+
+    #A_propos .texto p,
+    #soutenir_le_site ul li,
+    #soutenir_le_site button {
+        font-size: 0.8rem;
+    }
+
+    #soutenir_le_site .container {
+        padding: 10px;
+    }
+
+    #soutenir_le_site button {
+        font-size: 0.8rem;
+    }
+
+    footer .container {
+        height: 650px;
+    }
+
+    footer .footer-col {
+        width: 100%;
+    }
+}
+
+@media (max-width: 383px) {
+    footer p {
+        font-size: 0.6rem;
+    }
+}
