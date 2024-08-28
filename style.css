@@ -422,27 +422,6 @@ footer p {
     justify-content: center;
 }
 
-#section_form_contact .request_message {
-    width: 400px;
-    text-transform: capitalize;
-    background-color: #1F2833;
-    text-align: center;
-    /*color: #2FE94A;*/
-    font-size: 13px;
-    padding: 14px;
-    margin-bottom: 20px;
-    border-radius: 30px;
-    box-shadow: 0 0 15px rgba(31, 40, 51, 0.1);
-    animation: anime 0.5s ease-out;
-}
-
-/* ANIMATION */
-@keyframes anime {
-    from {
-        transform: translateY(-70px);
-    }
-}
-
 #section_form_contact .titre {
     text-align: center;
     align-items: center;
@@ -520,7 +499,7 @@ footer p {
     opacity: 0;
 }
 
-/*#section_form_contact .form_input:focus {
+#section_form_contact .form_input:focus {
     outline: none;
     border-bottom: 4px solid #2FE94A;
     width: 65%;
@@ -533,7 +512,7 @@ footer p {
 #section_form_contact .form_input:focus+.form_label {
     opacity: 1;
     font-size: 20px;
-}*/
+}
 
 /* FORM MESSAGE*/
 #section_form_contact .form_message,
