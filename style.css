@@ -35,6 +35,14 @@ p {
     color: #E9E51C;
 }
 
+.color-acento-2 {
+    color: #00FF84;
+}
+
+.color-acento-3 {
+    color: #9D2A2A;
+}
+
 li {
     list-style: none;
 }
@@ -415,133 +423,51 @@ footer p {
     text-align: center;
 }
 
-/* FORMULAIRE DE CONTACT */
-
-#section_form_contact {
-    align-items: center;
-    justify-content: center;
-}
-
-#section_form_contact .titre {
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-}
-
-#section_form_contact .title {
-    font-family: "Lobster", cursive;
-    padding: 0px 15px;
-    text-shadow: 0 0 5px rgb(0, 0, 0);
-    display: inline-block;
-    margin: 0 auto;
-}
-
-#section_form_contact .title_1 {
-    background-image: linear-gradient(to bottom, transparent 0%, transparent 68%, #C08126 68%, #C08126 95%, transparent 95%);
-    font-size: 50px;
-    margin-bottom: 30px;
-    border-radius: 20px;
-}
-
-/* CONTAINER */
-#section_form_contact {
+/* CONTACT */
+#contact {
     width: 95%;
-    margin: 15px 0px 15px 30px;
+    margin: 15px;
     display: flex;
     flex-direction: column;
-    background-image: linear-gradient(0deg,
-            rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.5)), url("IMAGES/1_Images seules/7_Catedral_de_León-Santa.jpg");
+    background-color: #1F2833;
     background-size: cover;
     background-position: center center;
     border-radius: 30px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     padding: 30px 50px;
     box-sizing: border-box;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
-/* FORM */
-#section_form_contact .form_group {
-    width: 100%;
-    margin-bottom: 20px;
-    position: relative;
+#contact .titre {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
 }
 
-#section_form_contact .form_label {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    font-size: inherit;
-    transform: translateY(-50%);
-    opacity: 1;
-    transition: all .3s;
+#contact .title {
+    padding: 0px 15px;
+    text-shadow: 0 0 5px rgb(0, 0, 0);
+    display: inline-block;
+    margin: 0 auto;
 }
 
-/* FORM INPUT */
-#section_form_contact .form_input {
-    font-size: 16px;
-    font-family: inherit;
-    padding: 3px 10px;
-    border-radius: 8px;
-    border: none;
-    border-bottom: 4px solid transparent;
-    width: 100%;
-    transition: all .3s;
+#contact .title_1 {
+    background-image: linear-gradient(to bottom, transparent 0%, transparent 68%, #C08126 68%, #C08126 95%, transparent 95%);
+    font-size: 50px;
+    margin-bottom: 30px;
+    border-radius: 20px;
 }
 
-#section_form_contact .form_input::-webkit-input-placeholder {
-    color: #000;
-    transform: translateY(4px);
+#contact .exemple_message_etudiant{
+    margin-bottom: 50px;
 }
 
-#section_form_contact .form_input::focus::-webkit-input-placeholder {
-    visibility: hidden;
-    opacity: 0;
-}
-
-#section_form_contact .form_input:focus {
-    outline: none;
-    border-bottom: 4px solid #2FE94A;
-    width: 65%;
-}
-
-#section_form_contact .form_input:focus:invalid {
-    border-bottom: 4px solid #E94A2F;
-}
-
-#section_form_contact .form_input:focus+.form_label {
-    opacity: 1;
-    font-size: 20px;
-}
-
-/* FORM MESSAGE*/
-#section_form_contact .form_message,
-#section_form_contact .form_message .message_input {
-    width: 100%;
-}
-
-/* submitBtn */
-#section_form_contact .submitBtn {
-    display: block;
-    padding: 5px 30px;
-    border: none;
-    outline: none;
-    background-color: #E9E51C;
-    color: #1F2833;
-    font-family: inherit;
-    font-size: 25px;
-    border-radius: 30px;
-    margin: 20px auto;
-    cursor: pointer;
-    transition: all .3s;
-}
-
-#section_form_contact .submitBtn:hover {
-    transform: scale(1.02) translateY(-2px);
-}
-
-#section_form_contact .submitBtn:active {
-    transform: scale(0.98) translateY(1px);
+#contact .exemple_message_prof_ou_personnel{
+    margin-bottom: 50px;
 }
 
 /* RESPONSIVE */

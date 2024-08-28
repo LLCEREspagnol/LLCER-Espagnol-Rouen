@@ -52,68 +52,38 @@
         </div>
     </header>
     <main>
-        <section id="section_form_contact">
+        <section id="contact">
             <div class="container">
                 <div class="logo">
                     <div class="titre">
                         <h1 class="title title_1">Contact</h1>
                     </div>
                 </div>
-                <!-- <form action="https://api.web3forms.com/submit" method="POST" class="form_contact" id="contact"> -->
-                <form action="sendEmail" method="POST" class="form_contact" id="contact">
-                    <div class="form_group">
-                        <input type="text" class="form_input" id="nom" name="nom" placeholder="Votre NOM">
-                        <label class="form_label">
-                            Votre NOM
-                        </label>
-                        <uppercase />
-                    </div>
-                    <div class="form_group">
-                        <input type="text" class="form_input" name="prenom" id="prenom" placeholder="Votre Prénom">
-                        <label class="form_label">
-                            Votre Prénom
-                        </label>
-                    </div>
-                    <div class="form_group">
-                        <select name="statut" id="statut" class="form_input">
-                            <option disabled value="" selected>- Votre Statut -</option>
-                            <option value="Professeur(e)">Professeur(e)</option>
-                            <option value="Personnel">Personnel</option>
-                            <option value="Étudiant(e)">Étudiant(e)</option>
-                        </select>
-                    </div>
-                    <div class="form_group">
-                        <input type="email" class="form_input" name="adresse_mail" id="adresse_mail"
-                            placeholder="Votre Adresse Mail">
-                        <label class="form_label">
-                            Votre Mail
-                        </label>
-                    </div>
-                    <div class="form_group">
-                        <input type="text" class="form_input" name="objet" id="objet" placeholder="Objet">
-                        <label class="form_label">
-                            Objet
-                        </label>
-                    </div>
+                <p><span class="color-acento">Je suis Étudiant :</span></p>
+                <br>
+                <div class="exemple_message_etudiant">
+                    <p><span class="color-acento-3"><I><U>Exemple de message :</U></I></span></p>
                     <br>
-                    <div class="form_message">
-                        <label class="form_message">
-                            <p>
-                                <center>Votre Message</center>
-                            </p>
-                        </label>
-                        <br>
-                        <textarea name="message" id="message" cols="30" rows="10" class="form_input message_input"
-                            placeholder="Bonjour,  je suis en... (si vous êtes étudiant n'oubliez pas de préciser votre niveau)"></textarea>
-                    </div>
-                    <div class="submit">
-                        <button name="send" id="btn" type="submit" class="submitBtn" onclick="sendEmail">Envoyer
-                            &rarr;</button>
-                    </div>
-                </form>
-                <!-- <p style="color: red;" id="erreur"></p>
-                <script src="JAVA SCRIPT/mail.js"></script> -->
-            </div>
+                    <p><span class="color-acento-2">NOM : </span>Votre NOM</p>
+                    <p><span class="color-acento-2">Prénom : </span>Votre prénom</p>
+                    <p><span class="color-acento-2">Statut : </span>Étudiant</p>
+                    <p><span class="color-acento-2">Message : </span>Bonjour, <br> je suis en (précisez votre niveau) ...</p>
+                </div>
+                <p><span class="color-acento">Je suis Professeur(e) ou je fais partie du département d'Études Romanes :</span></p>
+                <br>
+                <div class="exemple_message_prof_ou_personnel">
+                    <p><span class="color-acento-3"><I><U>Exemple de message :</U></I></span></p>
+                    <br>
+                    <p><span class="color-acento-2">NOM : </span>Votre NOM</p>
+                    <p><span class="color-acento-2">Statut : </span>Professeur(e) ou Personnel <span class="color-acento-3">(à choisir)</span></p>
+                    <p><span class="color-acento-2">Message : </span>Votre Message</p>
+                </div>
+                <div class="mail">
+                    <p><span class="color-acento-3">Écrie à : </span><a href="mailto:llcerespagnol.universitederouen@hotmail.com">llcerespagnol.universitederouen@hotmail.com</a></p>
+                    <br>
+                    <p><span class="color-acento-3">ATTENTION : </span>Tout mail ne contenant pas d'objet n'aura pas de réponse, même si vous avez reçu une réponse automatique.</p>
+                </div>
+           </div>
         </section>
         <footer>
             <div class="container">
@@ -158,89 +128,8 @@
             </div>
         </footer>
     </main>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script>
-        function sendEmail(){
-            Email.send({
-    SecureToken: "00121da2-d66e-49dc-b563-6117e6d35748",
-    /*Host : "smtp.elasticemail.com",
-    Username : "llcerespagnol.universitederouen@hotmail.com",
-    Password : "BA4020815F883683E9304618ABB4963D5748",*/
-    To : 'llcerespagnol.universitederouen@hotmail.com',
-    From : document.getElementById("adresse_mail").value,
-    Subject : document.getElementById("objet").value,
-    Body : "Name : " + document.getElementById("nom").value 
-        + "<br> Prénom :" + document.getElementById("prenom").value 
-        + "<br> Statut : " + document.getElementById("statut").value 
-        + "<br> Message : " + document.getElementById("message").value
-}).then(
-  message => alert("🤩 Votre message a été envoyé avec succès 🤩 !")
-);
-        }
-    </script>
 </body>
 <!-- JS SCRIPT link -->
 <script src="JAVA SCRIPT/active_navbar.js"></script>
 <script src="JAVA SCRIPT/dropDownMenu.js"></script>
-<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
-<!-- <script>
-    var btn = document.getElementById("btn");
-    btn.addEventListener("click", function (e) {
-        e.preventDefault()
-        var nom = document.getElementById('nom').value;
-        var prenom = document.getElementById('prenom').value;
-        var statut = document.getElementById('statut').value;
-        var adresse_mail = document.getElementById('adresse_mail').value;
-        var objet = document.getElementById('objet').value;
-        var message = document.getElementById('message').value;
-        var body = 'Nom: ' + nom + '<br/> Prénom: ' + prenom + '<br/> Statut: ' + statut + '<br/> Adresse mail: ' + adresse_mail + '<br/> Objet: ' + objet + '<br/> Message: ' + message;
-        Complet = true;
-
-        if (nom.value == "") {
-            alert('Vous avez omis de remplir votre Nom');
-            complet = false;
-
-            (prenom.value == "")
-            alert('Vous avez omis de remplir votre Prénom');
-            complet = false;
-
-            (statut.value == "")
-            alert('Vous avez omis de remplir votre Statut');
-            complet = false;
-
-            (adresse_mail.value == "")
-            alert('Vous avez omis de remplir votre Adresse Mail');
-            complet = false;
-
-            (objet.value == "")
-            alert('Vous avez omis de remplir votre Objet');
-            complet = false;
-
-            (message.value == "")
-            alert('Vous avez omis de remplir votre Message');
-            complet = false;
-        }
-        else (Complet) =>
-            Email.send({
-                Host: "smtp.elasticemail.com",
-                Username: "llcerespagnol.universitederouen@hotmail.com",
-                Password: "4374DA7947553368BD857F141BEE551C879B",
-                To: 'llcerespagnol.universitederouen@hotmail.com',
-                From: "llcerespagnol.universitederouen@hotmail.com",
-                Subject: objet,
-                Body: body
-            }).then(
-                message => {
-                    if (message == "OK") {
-                        Swal.fire({
-                            title1: "Succès !",
-                            text: "Votre message a bien été envoyé !",
-                            icon: "success"
-                        })
-                    }
-                }
-            );
-    })
-</script> -->
-
 </html>
