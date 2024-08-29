@@ -506,7 +506,20 @@ footer p {
 
 
 /* MÉTHODOLOGIE */
+#methodologie {
+    margin: 15px;
+    background-color: #1F2833;
+    padding: 15px;
+    border-radius: 30px;
+}
 
+#methodologie h2 {
+    margin-top: 0;
+    font-size: 3.2em;
+    text-align: center;
+}
+
+/* ERASMUS */
 
 /* CONTACT */
 #contact {
