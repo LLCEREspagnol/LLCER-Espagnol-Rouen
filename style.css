@@ -43,6 +43,10 @@ p {
     color: #9D2A2A;
 }
 
+.color-acento-4 {
+    color: #1F2833;
+}
+
 li {
     list-style: none;
 }
@@ -423,18 +427,54 @@ footer p {
     text-align: center;
 }
 
+/* ADMINISTRATION */
+#bourse {
+    background-color: #1F2833;
+    padding: 15px;
+    margin: 15px;
+    width: 98%;
+    border-radius: 30px;
+}
+
+#bourse .container .image_bourse {
+    text-align: center;
+}
+
+#bourse .container .image_bourse img {
+    width: 20%;
+    height: 20%;
+    padding: 15px;
+    border-radius: 30px;
+}
+
+#bourse .container .comment_faire p {
+    padding: 15px;
+    text-align: center;
+}
+
+#bourse .container .comment_faire p.logement {
+    padding: 15px 0px 50px 0px;
+    text-align: center;
+}
+
+#bourse .container .comment_faire p a{
+    color: #E9E51C;
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+/* LICENCE */
+
+/* MÉTHODOLOGIE */
+
 /* CONTACT */
 #contact {
-    width: 95%;
+    width: 98%;
     margin: 15px;
+    padding: 15px;
     display: flex;
-    flex-direction: column;
     background-color: #1F2833;
-    background-size: cover;
-    background-position: center center;
     border-radius: 30px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-    padding: 30px 50px;
     box-sizing: border-box;
     text-align: center;
     justify-content: center;
