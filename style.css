@@ -47,6 +47,10 @@ p {
     color: #1F2833;
 }
 
+.color-acento-5 {
+    color: #FFF;
+}
+
 li {
     list-style: none;
 }
@@ -57,7 +61,7 @@ a {
     font-size: 1rem;
 }
 
-button a {
+button , #commentaires .buttons button {
     font-size: 1.5em;
     font-weight: bold;
     padding: 10px 30px;
@@ -70,7 +74,7 @@ button a {
 }
 
 button:hover {
-    background-color: #a76f21;
+    background-color: #A76f21;
     scale: 1.05;
 }
 
@@ -427,6 +431,8 @@ footer p {
     text-align: center;
 }
 
+/* SOY ERASMUS */
+
 /* ADMINISTRATION */
 #bourse {
     background-color: #1F2833;
@@ -521,6 +527,92 @@ footer p {
 
 /* ERASMUS */
 
+/* AIDE */
+
+/* COMMENTAIRES */
+#commentaires .container {
+    background: #1F2833;
+    padding: 15px;
+    margin: 15px;
+    width: 96%;
+    box-shadow: 0 0 5px #000;
+    border-radius: 30px;
+}
+
+#commentaires .head{
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+#commentaires .text{
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+
+#commentaires .commentbox {
+    display: inline-flex;
+    justify-content: space-around;
+    padding: 10px;
+    width: 100%;
+}
+
+#commentaires .commentbox > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+    object-position: center;
+}
+
+#commentaires .content {
+    width: 100%;
+}
+
+#commentaires .user {
+    border: none;
+    outline: none;
+    background: none;
+    margin: 5px 0;
+    color: #F2F2F2;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+#commentaires .commentinput > input {
+    border: none;
+    padding: 10px;
+    padding-left: 0;
+    outline: none;
+    background: none;
+    border-bottom: 2px solid #A76f21;
+    margin-bottom: 10px;
+    width: 95%;
+}
+
+#commentaires .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#commentaires .buttons button {
+    font-size: 1em;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#commentaires .notify {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#commentaires .notify input{
+    margin-right: 5px;
+}
 
 /* CONTACT */
 #contact {
