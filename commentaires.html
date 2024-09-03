@@ -52,36 +52,56 @@
         </div>
     </header>
     <main>
-        <section id="commentaires">
-            <div class="container">
-                <div class="head">
-                    <h2>Je donne mon <span class="color-acento">avis</span></h2>
-                </div>
-                <div><span id="comment">0</span> Commentaires</div>
-                <div class="text">
-                    <p>Quelle utilité à ce site pour vous ?</p>
-                </div>
-                <div class="comments"></div>
-                <div class="commentbox">
-                    <img src="IMAGES/1_Images seules/8_Profil_user.png" alt="">
-                    <div class="content">
-                        <h4>Commenter par : </h4>
-                        <input type="text" value="Anonyme" class="user">
-                        <div class="commentinput">
-                            <input type="text" placeholder="Ajouter un commentaire..." class="usercomment">
-                            <div class="buttons">
-                                <button type="submit" disabled id="publier">Publier</button>
-                                <div class="notify">
-                                    <input type="checkbox" class="notifyinput"> <span>M'avertir</span>
-                                </div>
+        <div id="commentaires">
+            <div class="container center__display">
+                <div class="top">
+                    <div class="video__container">
+                        <img src="IMAGES/1_Images seules/9_Commentaire.png" width="600" height="450" alt="Section commentaires">
+                        <form>
+                            <div class="heart__icon center__display">
+                                <i class="far fa-heart"></i>
                             </div>
+                            <div class="form__info center__display">
+                                <input type="text" name="user" id="user" placeholder="Your user name">
+                                <input type="text" name="comment" id="comment" placeholder="Add a short comment here">
+                            </div>
+                            <button type="submit" class="submit__btn">
+                                Submit
+                            </button>
+                        </form>
+                        <div class="likes__count">
+                            <i class="far fa-heart"></i>
+                            <small class="count">0</small>
                         </div>
-                        <p></p>
                     </div>
                 </div>
-                </form>
+        
+                <div class="comments__container center__display">
+                    <!-- <div class="comment__card">
+                        <div class="pic center__display">
+                            A
+                        </div>
+                        <div class="comment__info">
+                            <small class="nickname">
+                                UserNameHere
+                            </small>
+                            <p class="comment">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, in magnam! Libero?
+                            </p>
+                            <div class="comment__bottom">
+                                <div class="heart__icon--comment">
+                                    <i class="far fa-heart"></i>
+                                </div>
+                                <button>
+                                    Reply
+                                </button>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
             </div>
-        </section>
+            <script src="main.js"></script>
+           </div>
         <footer>
             <div class="container">
                 <div class="row">
@@ -129,7 +149,7 @@
     <!-- JS SCRIPT link -->
     <script src="JAVA SCRIPT/active_navbar.js"></script>
     <script src="JAVA SCRIPT/dropDownMenu.js"></script>
-    <script src="JAVA SCRIPT/plugin.js"></script>
+    <script src="JAVA SCRIPT/main.js"></script>
 </body>
 
-</html>@
+</html>
