@@ -20,7 +20,12 @@ app.post('/comments', (req, res) => {
     const comment = { author, content, date: new Date() };
     comments.push(comment);
 
-    res.json(comment);
+    res.json(comment);  // Renvoie le commentaire ajouté pour confirmation
+});
+
+// Route pour récupérer tous les commentaires
+app.get('/comments', (req, res) => {
+    res.json(comments);  // Renvoie tous les commentaires
 });
 
 // Démarre le serveur
