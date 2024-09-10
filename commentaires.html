@@ -30,9 +30,9 @@
                 <li><a href="licence.html">Licence</a></li>
                 <li><a href="methodologie.html">Méthodologie</a></li>
                 <li><a href="erasmus.html">Erasmus</a></li>
-                <li><a href="#">Aide</a></li>
+                <li><a href="#" class="active">Aide</a></li>
                 <li><a href="#A_propos">À propos</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="toggle_btn">
                 <i class="fa-solid fa-bars"></i>
@@ -51,105 +51,108 @@
             <!--<li><a href="#" class="action_btn">Soy Erasmus</a></li>-->
         </div>
     </header>
-    <main>
-        <div id="commentaires">
-            <div class="container center__display">
-                <div class="top">
-                    <div class="video__container">
-                        <img src="IMAGES/1_Images seules/9_Commentaire.png" width="600" height="450" alt="Section commentaires">
-                        <form>
-                            <div class="heart__icon center__display">
-                                <i class="far fa-heart"></i>
-                            </div>
-                            <div class="form__info center__display">
-                                <input type="text" name="user" id="user" placeholder="Your user name">
-                                <input type="text" name="comment" id="comment" placeholder="Add a short comment here">
-                            </div>
-                            <button type="submit" class="submit__btn">
-                                Submit
-                            </button>
-                        </form>
-                        <div class="likes__count">
-                            <i class="far fa-heart"></i>
-                            <small class="count">0</small>
-                        </div>
+    <h1>Commentaires</h1>
+    
+    <form id="commentForm">
+        <textarea id="commentContent" placeholder="Écris ton commentaire ici..." rows="4" cols="50"></textarea><br><br>
+        <input type="text" id="commentAuthor" placeholder="Ton nom"><br><br>
+        <button type="submit">Envoyer</button>
+    </form>
+
+    <div id="comment-section"></div>
+
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Récupérer les données
+            const author = document.getElementById('commentAuthor').value;
+            const content = document.getElementById('commentContent').value;
+            
+            // Envoi du commentaire au serveur
+            const response = await fetch('/comments', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ author, content })
+            });
+            
+            if (response.ok) {
+                const comment = await response.json();
+                displayComment(comment);
+            }
+        });
+
+        // Affiche les commentaires sur la page
+        function displayComment(comment) {
+            const commentSection = document.getElementById('comment-section');
+            const commentDiv = document.createElement('div');
+            commentDiv.classList.add('comment');
+            
+            const authorDiv = document.createElement('div');
+            authorDiv.classList.add('comment-author');
+            authorDiv.textContent = comment.author;
+
+            const contentDiv = document.createElement('div');
+            contentDiv.classList.add('comment-content');
+            contentDiv.textContent = comment.content;
+            
+            commentDiv.appendChild(authorDiv);
+            commentDiv.appendChild(contentDiv);
+            
+            commentSection.appendChild(commentDiv);
+        }
+    </script>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Licence</h4>
+                    <ul>
+                        <li><a href="#">L1 (1ère annés)</a></li>
+                        <li><a href="#">L2 (2ème annés)</a></li>
+                        <li><a href="#">L3 (3ème annés)</a></li>
+                        <li><a href="#">Type d'emploi du temps</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Besoin d'aide ?</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Vidéos utiles</a></li>
+                        <li><a href="#">Boîte à outil</a></li>
+                        <li><a href="#">Comment s'organiser ?</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Aidez le site</h4>
+                    <ul>
+                        <li><a href="#soutenir_le_site">Boîte à idée</a></li>
+                        <li><a href="commentaires.html">Commentaires</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Suivez l'actus !</h4>
+                    <div class="social_links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-        
-                <div class="comments__container center__display">
-                    <!-- <div class="comment__card">
-                        <div class="pic center__display">
-                            A
-                        </div>
-                        <div class="comment__info">
-                            <small class="nickname">
-                                UserNameHere
-                            </small>
-                            <p class="comment">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, in magnam! Libero?
-                            </p>
-                            <div class="comment__bottom">
-                                <div class="heart__icon--comment">
-                                    <i class="far fa-heart"></i>
-                                </div>
-                                <button>
-                                    Reply
-                                </button>
-                            </div>
-                        </div>
-                    </div> -->
-                </div>
+                <hr width="100%" color="#9D2A2A">
+                <p>&copy; Copyright par <span class="color-acento">LLCER Espagnol (Université de
+                        Rouen)</span> 2024 - 2025. Tous droits réservés.
+                </p>
             </div>
-            <script src="main.js"></script>
-           </div>
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col">
-                        <h4>Licence</h4>
-                        <ul>
-                            <li><a href="#">L1 (1ère annés)</a></li>
-                            <li><a href="#">L2 (2ème annés)</a></li>
-                            <li><a href="#">L3 (3ème annés)</a></li>
-                            <li><a href="#">Type d'emploi du temps</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Besoin d'aide ?</h4>
-                        <ul>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#">Vidéos utiles</a></li>
-                            <li><a href="#">Boîte à outil</a></li>
-                            <li><a href="#">Comment s'organiser ?</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Aidez le site</h4>
-                        <ul>
-                            <li><a href="#soutenir_le_site">Boîte à idée</a></li>
-                            <li><a href="commentaires.html">Commentaires</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Suivez l'actus !</h4>
-                        <div class="social_links">
-                            <a href="#"><i class="fab fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <hr width="100%" color="#9D2A2A">
-                    <p>&copy; Copyright par <span class="color-acento">LLCER Espagnol (Université de
-                            Rouen)</span> 2024 - 2025. Tous droits réservés.
-                    </p>
-                </div>
-            </div>
-        </footer>
-    </main>
+        </div>
+    </footer>
 
     <!-- JS SCRIPT link -->
     <script src="JAVA SCRIPT/active_navbar.js"></script>
     <script src="JAVA SCRIPT/dropDownMenu.js"></script>
-    <script src="JAVA SCRIPT/main.js"></script>
+    <script src="JAVA SCRIPT/commentaire.js"></script>
+
 </body>
 
 </html>
