@@ -9,6 +9,104 @@
     <!--CUSTOM CSS LINK-->
     <link rel="stylesheet" href="style.css">
 
+    <!--STYLE-->
+    <style>
+        /* Styles globaux */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #E9E51C;
+    margin-top: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Style du formulaire de commentaires */
+#commentForm {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #1F2833;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#commentForm label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#commentForm input[type="text"], #commentForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255, 255, 255);
+    border-radius: 4px;
+}
+
+#commentForm textarea {
+    padding: 25px;
+}
+
+#commentForm button {
+    background-color: #C08126;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255);
+    cursor: pointer;
+}
+
+#commentForm button:hover {
+    background-color: #A76f21;
+}
+
+#commentForm button:active {
+    scale: 0.95;
+}
+
+/* Style de la section des commentaires */
+#comments {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #1F2833;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.comment {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.comment:last-child {
+    border-bottom: none;
+}
+
+.comment strong {
+    display: block;
+    color: #333;
+}
+
+.comment small {
+    display: block;
+    color: #666;
+}
+
+    </style>
+
     <!--FONT AWESOME LINK-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -51,68 +149,26 @@
             <!--<li><a href="#" class="action_btn">Soy Erasmus</a></li>-->
         </div>
     </header>
-    <h1>Commentaires</h1>
+    <div class="container">
+        <h1>Partagez vos idées</h1>
 
-    <form id="commentForm">
-        <textarea id="commentContent" placeholder="Écris ton commentaire ici..." rows="4" cols="50"></textarea><br><br>
-        <input type="text" id="commentAuthor" placeholder="Ton nom"><br><br>
-        <button type="submit">Envoyer</button>
-    </form>
+        <form id="commentForm">
+            <label for="username">Votre nom :</label>
+            <input type="text" id="username" name="username" required>
 
-    <div id="comment-section"></div>
+            <label for="comment">Votre commentaire :</label>
+            <textarea id="comment" name="comment" required></textarea>
 
-    <script>
-        document.getElementById('commentForm').addEventListener('submit', async function (e) {
-            e.preventDefault();
+            <button type="submit">Envoyer</button>
+        </form>
 
-            // Récupérer les données du formulaire
-            const author = document.getElementById('commentAuthor').value;
-            const content = document.getElementById('commentContent').value;
+        <div id="commentSection">
+            <h2>Commentaires</h2>
+            <div id="comments"></div>
+        </div>
+    </div>
 
-            // Envoi du commentaire au serveur
-            const response = await fetch('/comments', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ author, content })
-            });
-
-            if (response.ok) {
-                const comment = await response.json();
-                displayComment(comment);
-            }
-        });
-
-        // Récupérer et afficher les commentaires lors du chargement de la page
-        window.onload = async function () {
-            const response = await fetch('/comments');
-            if (response.ok) {
-                const comments = await response.json();
-                comments.forEach(displayComment);
-            }
-        };
-
-        // Affiche un commentaire dans la section des commentaires
-        function displayComment(comment) {
-            const commentSection = document.getElementById('comment-section');
-            const commentDiv = document.createElement('div');
-            commentDiv.classList.add('comment');
-
-            const authorDiv = document.createElement('div');
-            authorDiv.classList.add('comment-author');
-            authorDiv.textContent = comment.author;
-
-            const contentDiv = document.createElement('div');
-            contentDiv.classList.add('comment-content');
-            contentDiv.textContent = comment.content;
-
-            commentDiv.appendChild(authorDiv);
-            commentDiv.appendChild(contentDiv);
-
-            commentSection.appendChild(commentDiv);
-        }
-    </script>
+    <script src="JAVA SCRIPT/script.js"></script>
     <footer>
         <div class="container">
             <div class="row">
@@ -159,8 +215,6 @@
     <!-- JS SCRIPT link -->
     <script src="JAVA SCRIPT/active_navbar.js"></script>
     <script src="JAVA SCRIPT/dropDownMenu.js"></script>
-    <script src="JAVA SCRIPT/commentaire.js"></script>
-
 </body>
 
 </html>
