@@ -69,38 +69,6 @@ app.post('/comments', (req, res) => {
     });
 });
 
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-app.post('/submit', async (req, res) => {
-    const recaptchaResponse = req.body.recaptcha;
-    const secretKey = 'VOTRE_CLÉ_SECRÈTE'; // Remplacez par votre clé secrète reCAPTCHA
-
-    try {
-        // Vérifiez la réponse reCAPTCHA avec l'API de Google
-        const response = await axios.post('https://www.google.com/recaptcha/api/siteverify', null, {
-            params: {
-                secret: secretKey,
-                response: recaptchaResponse
-            }
-        });
-
-        const data = response.data;
-
-        if (data.success) {
-            // La validation reCAPTCHA a réussi
-            res.json({ success: true, message: 'Message envoyé avec succès!' });
-        } else {
-            // La validation reCAPTCHA a échoué
-            res.json({ success: false, message: 'Échec de la validation reCAPTCHA.' });
-        }
-    } catch (error) {
-        // Erreur serveur
-        res.status(500).json({ success: false, message: 'Erreur serveur.' });
-    }
-});
-
 // Lancer le serveur
 app.listen(PORT, () => {
     console.log(`Serveur démarré sur http://localhost:${PORT}`);
