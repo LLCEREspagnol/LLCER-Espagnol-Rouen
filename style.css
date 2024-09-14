@@ -546,49 +546,6 @@ footer p {
     margin-top: 5px;
 }
 
-/* CONTACT */
-#contact {
-    width: 98%;
-    margin: 15px;
-    padding: 15px;
-    display: flex;
-    background-color: #1F2833;
-    border-radius: 30px;
-    box-sizing: border-box;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-
-#contact .titre {
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 15px;
-}
-
-#contact .title {
-    padding: 0px 15px;
-    text-shadow: 0 0 5px rgb(0, 0, 0);
-    display: inline-block;
-    margin: 0 auto;
-}
-
-#contact .title_1 {
-    background-image: linear-gradient(to bottom, transparent 0%, transparent 68%, #C08126 68%, #C08126 95%, transparent 95%);
-    font-size: 50px;
-    margin-bottom: 30px;
-    border-radius: 20px;
-}
-
-#contact .exemple_message_etudiant{
-    margin-bottom: 50px;
-}
-
-#contact .exemple_message_prof_ou_personnel{
-    margin-bottom: 50px;
-}
-
 /* RESPONSIVE */
 @media (min-width: 1280px) {
 

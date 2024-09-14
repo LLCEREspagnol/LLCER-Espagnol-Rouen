@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
     <!--CUSTOM CSS LINK-->
     <link rel="stylesheet" href="style.css">
 
@@ -17,20 +18,126 @@
     <!--GOOGLE FONTS LINK-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lobster" />
 
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lff3EMqAAAAAJo8gsqMjgDp460yuJK9biftnXyk"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
     <title>LLCER Espagnol ~ Contact</title>
+    <style>
+        .container-parent {
+            display: flex;
+            /* Activer Flexbox pour le parent */
+            justify-content: center;
+            /* Centrer horizontalement */
+            align-items: center;
+            /* Centrer verticalement */
+            height: 100vh;
+            /* Faire en sorte que le parent prenne 100% de la hauteur de la fenêtre */
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 600px;
+            /* Largeur du conteneur */
+            padding: 20px;
+            /* Padding interne */
+            background-color: #1F2833;
+            /* Couleur du conteneur */
+            border-radius: 30px;
+            /* Bordures arrondies */
+            box-sizing: border-box;
+        }
+
+        .titre {
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .title {
+            padding: 0px 15px;
+            text-shadow: 0 0 5px rgb(0, 0, 0);
+            display: inline-block;
+            margin: 0 auto;
+        }
+
+        .title_1 {
+            background-image: linear-gradient(to bottom, transparent 0%, transparent 68%, #C08126 68%, #C08126 95%, transparent 95%);
+            font-size: 50px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .button-container {
+            display: flex;
+            /* Utiliser Flexbox */
+            justify-content: center;
+            /* Centrer horizontalement */
+            margin-top: 20px;
+            /* Espacement au-dessus du bouton */
+        }
+
+        button {
+            background-color: #C08126;
+            /* Couleur de fond */
+            color: #fff;
+            /* Couleur du texte */
+            border: 1px solid rgba(255, 255, 255);
+            padding: 10px 20px;
+            /* Padding du bouton */
+            border-radius: 10px;
+            /* Arrondir les bords */
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #A76f21;
+        }
+
+        button:active {
+            scale: 0.95;
+        }
+
+        #status {
+            margin-top: 15px;
+        }
+
+        .g-recaptcha {
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
 
 <body>
-<header>
+    <header>
         <div class="navbar">
             <div class="logo"><a href="#">LLCER Espagnol (Université de Rouen)</a></div>
             <ul class="links">
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="administration.html">Administration</a></li>
-                <li><a href="licence.html">Licence</a></li>
-                <li><a href="methodologie.html">Méthodologie</a></li>
+                <li><a href="#les_plus_visites">Administration</a></li>
+                <li><a href="#les_plus_visites">Licence</a></li>
+                <li><a href="#les_plus_visites">Méthodologie</a></li>
                 <li><a href="erasmus.html">Erasmus</a></li>
-                <li><a href="#">Aide</a></li>
+                <li><a href="aide.html">Aide</a></li>
                 <li><a href="#A_propos">À propos</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
@@ -41,52 +148,111 @@
 
         <div class="dropdown_menu">
             <li><a href="index.html">Accueil</a></li>
-            <li><a href="administration.html">Administration</a></li>
-            <li><a href="licence.html">Licence</a></li>
-            <li><a href="methodologie.html">Méthodologie</a></li>
+            <li><a href="#les_plus_visites">Administration</a></li>
+            <li><a href="#les_plus_visites">Licence</a></li>
+            <li><a href="#les_plus_visites">Méthodologie</a></li>
             <li><a href="erasmus.html">Erasmus</a></li>
-            <li><a href="#">Aide</a></li>
+            <li><a href="aide.html">Aide</a></li>
             <li><a href="#A_propos">À propos</a></li>
             <li><a href="contact.html">Contact</a></li>
             <!--<li><a href="#" class="action_btn">Soy Erasmus</a></li>-->
         </div>
     </header>
-    <main>
-        <section id="contact">
-            <div class="container">
+    <div class="container-parent">
+        <div class="container">
+            <section id="contact-form">
                 <div class="logo">
                     <div class="titre">
                         <h1 class="title title_1">Contact</h1>
                     </div>
                 </div>
-                <p><span class="color-acento">Je suis Étudiant :</span></p>
-                <br>
-                <div class="exemple_message_etudiant">
-                    <p><span class="color-acento-3"><I><U>Exemple de message :</U></I></span></p>
-                    <br>
-                    <p><span class="color-acento-2">NOM : </span>Votre NOM</p>
-                    <p><span class="color-acento-2">Prénom : </span>Votre prénom</p>
-                    <p><span class="color-acento-2">Statut : </span>Étudiant</p>
-                    <p><span class="color-acento-2">Message : </span>Bonjour, <br> je suis en (précisez votre niveau) ...</p>
-                </div>
-                <p><span class="color-acento">Je suis Professeur(e) ou je fais partie du département d'Études Romanes :</span></p>
-                <br>
-                <div class="exemple_message_prof_ou_personnel">
-                    <p><span class="color-acento-3"><I><U>Exemple de message :</U></I></span></p>
-                    <br>
-                    <p><span class="color-acento-2">NOM : </span>Votre NOM</p>
-                    <p><span class="color-acento-2">Statut : </span>Professeur(e) ou Personnel <span class="color-acento-3">(à choisir)</span></p>
-                    <p><span class="color-acento-2">Message : </span>Votre Message</p>
-                </div>
-                <div class="mail">
-                    <p><span class="color-acento-3">Écrie à : </span><a href="mailto:llcerespagnol.universitederouen@hotmail.com">llcerespagnol.universitederouen@hotmail.com</a></p>
-                    <br>
-                    <p><span class="color-acento-3">ATTENTION : </span>Tout mail ne contenant pas d'objet n'aura pas de réponse, même si vous avez reçu une réponse automatique.</p>
-                </div>
-           </div>
-        </section>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nom :</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email :</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="statut">Statut :</label>
+                        <select id="statut" name="statut" required>
+                            <option value="" selected disabled>Sélectionnez votre statut</option>
+                            <option value="Lycéen">Lycéen</option>
+                            <option value="Étudiant">Étudiant</option>
+                            <option value="Professeur(e)">Professeur(e)</option>
+                            <option value="Équipe du département d'Études Romanes">Équipe du département d'Études
+                                Romanes
+                            </option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Objet :</label>
+                        <select id="subject" name="subject" required>
+                            <option value="" selected disabled>Sélectionnez un objet</option>
+                            <option value="Administration">Administration</option>
+                            <option value="Licence">Licence</option>
+                            <option value="Méthodologie">Méthodologie</option>
+                            <option value="Erasmus">Erasmus</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message :</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <div class="button-container">
+                            <button type="submit">Envoyer</button>
+                        </div>
+                    </div>
+                </form>
+                <p id="status"></p>
+            </section>
+        </div>
+    </div>
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            const recaptchaResponse = grecaptcha.getResponse();
+
+            if (recaptchaResponse.length === 0) {
+                document.getElementById("status").textContent = "Veuillez compléter le CAPTCHA.";
+                document.getElementById("status").style.color = "red";
+                return;
+            }
+
+            const formData = new FormData(this);
+            formData.append("recaptcha", recaptchaResponse);
+
+            try {
+                const response = await fetch("https://getform.io/f/bolgjzwa", {
+                    method: "POST",
+                    body: formData
+                });
+
+                if (response.ok) {
+                    document.getElementById("status").textContent = "Votre message a été envoyé avec succès !";
+                    document.getElementById("status").style.color = "green";
+                    document.getElementById("contactForm").reset();
+                    grecaptcha.reset();
+                } else {
+                    document.getElementById("status").textContent = "Une erreur est survenue lors de l'envoi du message.";
+                    document.getElementById("status").style.color = "red";
+                }
+            } catch (error) {
+                document.getElementById("status").textContent = "Une erreur réseau s'est produite. Veuillez réessayer plus tard.";
+                document.getElementById("status").style.color = "red";
+            }
+        });
+    </script>
+    
+    <section>
         <footer>
-            <div class="container">
+            <div class="container-footer">
                 <div class="row">
                     <div class="footer-col">
                         <h4>Licence</h4>
@@ -122,14 +288,18 @@
                     </div>
                     <hr width="100%" color="#9D2A2A">
                     <p>&copy; Copyright par <span class="color-acento">LLCER Espagnol (Université de
-                            Rouen)</span> 2024. Tous droits réservés.
+                            Rouen)</span> 2024 - 2025. Tous droits réservés.
                     </p>
                 </div>
             </div>
         </footer>
-    </main>
+
+    </section>
+
+    <!-- JS SCRIPT link -->
+    <script src="JAVA SCRIPT/active_navbar.js"></script>
+    <script src="JAVA SCRIPT/dropDownMenu.js"></script>
+
 </body>
-<!-- JS SCRIPT link -->
-<script src="JAVA SCRIPT/active_navbar.js"></script>
-<script src="JAVA SCRIPT/dropDownMenu.js"></script>
+
 </html>
